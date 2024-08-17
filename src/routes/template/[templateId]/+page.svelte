@@ -10,6 +10,10 @@
   let template = data.template
 </script>
 
+<svelte:head>
+  <title>{template?.values.Title} | Undb Templates</title>
+</svelte:head>
+
 <section class="pt-10">
   <div class="space-y-4">
     {#if template}
