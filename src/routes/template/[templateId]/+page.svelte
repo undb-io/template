@@ -3,6 +3,7 @@
   import type { PageServerData } from "./$types"
   import { Button } from "$lib/components/ui/button"
   import { PUBLIC_UNDB_API_HOST } from "$env/static/public"
+  import { AspectRatio } from "$lib/components/ui/aspect-ratio"
 
   export let data: PageServerData
 
@@ -16,7 +17,18 @@
       Back to templates
     </a>
     {#if template}
+      {@const cover = template.values.Cover[0]}
+      {#if cover}
+        <AspectRatio class="w-full" ratio={16 / 3}>
+          <img class="h-full w-full object-cover" src={cover.signedUrl} alt={template.values.Title} />
+        </AspectRatio>
+      {/if}
+
       <h1 class="text-2xl font-semibold">{template.values.Title}</h1>
+
+      <p class="text-muted-foreground">
+        {template.values.Summary}
+      </p>
 
       <Button
         href={PUBLIC_UNDB_API_HOST + "/create-from-template/" + template.values.spaceId + "/" + template.values.baseId}

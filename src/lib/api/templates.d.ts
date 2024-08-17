@@ -54,8 +54,8 @@ export interface paths {
                 content: {
                     "application/json": {
                         values: {
-                            Title?: string | null;
-                            Images?: ({
+                            Title: string;
+                            Cover?: ({
                                 id: string;
                                 url: string;
                                 signedUrl?: string | null;
@@ -78,7 +78,7 @@ export interface paths {
                             } | unknown;
                             baseId: string;
                             spaceId: string;
-                            Cover?: ({
+                            Images?: ({
                                 id: string;
                                 url: string;
                                 signedUrl?: string | null;
@@ -99,6 +99,7 @@ export interface paths {
                                     type: string;
                                 }[] | null;
                             } | unknown;
+                            Summary?: string | null;
                         };
                     };
                 };
@@ -163,8 +164,8 @@ export interface paths {
                     "application/json": {
                         filter: Record<string, never>;
                         values: {
-                            Title?: string | null;
-                            Images?: ({
+                            Title?: string;
+                            Cover?: ({
                                 id: string;
                                 url: string;
                                 signedUrl?: string | null;
@@ -187,7 +188,7 @@ export interface paths {
                             } | unknown;
                             baseId?: string;
                             spaceId?: string;
-                            Cover?: ({
+                            Images?: ({
                                 id: string;
                                 url: string;
                                 signedUrl?: string | null;
@@ -208,6 +209,7 @@ export interface paths {
                                     type: string;
                                 }[] | null;
                             } | unknown;
+                            Summary?: string | null;
                         };
                     };
                 };
@@ -306,8 +308,8 @@ export interface paths {
                 content: {
                     "application/json": {
                         values: {
-                            Title?: string | null;
-                            Images?: ({
+                            Title?: string;
+                            Cover?: ({
                                 id: string;
                                 url: string;
                                 signedUrl?: string | null;
@@ -330,7 +332,7 @@ export interface paths {
                             } | unknown;
                             baseId?: string;
                             spaceId?: string;
-                            Cover?: ({
+                            Images?: ({
                                 id: string;
                                 url: string;
                                 signedUrl?: string | null;
@@ -351,6 +353,7 @@ export interface paths {
                                     type: string;
                                 }[] | null;
                             } | unknown;
+                            Summary?: string | null;
                         };
                     };
                 };
@@ -393,8 +396,8 @@ export interface paths {
                         records: {
                             id?: string;
                             values: {
-                                Title?: string | null;
-                                Images?: ({
+                                Title: string;
+                                Cover?: ({
                                     id: string;
                                     url: string;
                                     signedUrl?: string | null;
@@ -417,7 +420,7 @@ export interface paths {
                                 } | unknown;
                                 baseId: string;
                                 spaceId: string;
-                                Cover?: ({
+                                Images?: ({
                                     id: string;
                                     url: string;
                                     signedUrl?: string | null;
@@ -438,6 +441,7 @@ export interface paths {
                                         type: string;
                                     }[] | null;
                                 } | unknown;
+                                Summary?: string | null;
                             };
                         }[];
                     };
@@ -596,43 +600,45 @@ export interface paths {
 export type webhooks = Record<string, never>;
 export interface components {
     schemas: {
-        /** @example rec3unaqode */
+        /** @example rechc0mi1ar */
         RecordId: string;
         /** @example {
          *       "Title": "Project Management",
-         *       "Images": [
-         *         {
-         *           "id": "01915ef2-5762-7223-a63c-bed1b75cc6e2",
-         *           "url": "/api/upload",
-         *           "signedUrl": "http://localhost:3721/public/01915ef2-5762-7223-a63c-bed1b75cc6e2.png",
-         *           "name": "01915ef2-5762-7223-a63c-bed1b75cc6e2.png",
-         *           "token": "TtCbOjETAmYNVuLU",
-         *           "size": 266967,
-         *           "type": "image/png"
-         *         }
-         *       ],
-         *       "baseId": "basmk3d625j",
-         *       "spaceId": "spayel3g",
          *       "Cover": [
          *         {
-         *           "id": "01915f5c-7d4d-7338-b02c-2d0de2418298",
-         *           "url": "/api/upload",
-         *           "signedUrl": "http://localhost:3721/public/01915f5c-7d4d-7338-b02c-2d0de2418298.jpg",
-         *           "name": "01915f5c-7d4d-7338-b02c-2d0de2418298.jpg",
-         *           "token": "hAdR8bMpO11Wj5D5",
+         *           "id": "01915fcd-fcc3-7222-a5c1-842cf2ab8b26",
+         *           "url": "https://minio-igkkokwwgwk0kw0s0gok00cw.undb.io/undb-private/01915fcd-fcc3-7222-a5c1-842cf2ab8b26.jpg",
+         *           "signedUrl": "https://minio-igkkokwwgwk0kw0s0gok00cw.undb.io/undb-private/01915fcd-fcc3-7222-a5c1-842cf2ab8b26.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=Mv5UqoUhDirVxpCEbEc7%2F20240817%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240817T114951Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=380e0d78cfb5286a4bbab5c9bf88d594e98bf484b48c95abf95ed17cbffba1a5",
+         *           "name": "01915fcd-fcc3-7222-a5c1-842cf2ab8b26.jpg",
+         *           "token": "HP6hgqx482-fwDJS",
          *           "size": 2628885,
          *           "type": "image/jpeg"
          *         }
-         *       ]
+         *       ],
+         *       "baseId": "basry3lfnco",
+         *       "spaceId": "spam88h5",
+         *       "Images": [],
+         *       "Summary": "This project management template is designed to help teams efficiently manage tasks, timelines, and resources using Airtable. It includes essential features like task tracking, where you can log task names, assign team members, set priorities, deadlines, and monitor status. The template provides various views, such as Kanban and calendar views, to visualize project progress and keep the team aligned. It also supports team collaboration by allowing members to assign tasks, add comments, and share attachments. Additionally, it helps track project resources like budgets, time, and tools, ensuring projects stay on track. The template is versatile and can be adapted to manage anything from simple task lists to complex multi-project management."
          *     } */
         RecordValues: {
             id: string;
-            Title?: string | null;
+            Title: string;
             createdAt: string;
             createdBy: string;
             updatedAt: string;
             updatedBy: string;
             autoIncrement: number;
+            Cover: {
+                id: string;
+                url: string;
+                signedUrl?: string | null;
+                name: string;
+                token: string;
+                size: number;
+                type: string;
+            }[];
+            baseId: string;
+            spaceId: string;
             Images?: {
                 id: string;
                 url: string;
@@ -642,17 +648,7 @@ export interface components {
                 size: number;
                 type: string;
             }[] | null;
-            baseId: string;
-            spaceId: string;
-            Cover?: {
-                id: string;
-                url: string;
-                signedUrl?: string | null;
-                name: string;
-                token: string;
-                size: number;
-                type: string;
-            }[] | null;
+            Summary?: string | null;
         };
         /** @example {} */
         RecordDisplayValues: {

@@ -1,9 +1,9 @@
 <script lang="ts">
-  import Templates from "$lib/components/template/templates.svelte";
-  import type { PageServerData } from "./$types";
+  import Templates from "$lib/components/template/templates.svelte"
+  import type { PageServerData } from "./$types"
 
-  export let data: PageServerData;
-  let templates = data.templates.data?.records;
+  export let data: PageServerData
+  let templates = data.templates.data?.records
 </script>
 
 <main class="container mx-auto pt-20">
