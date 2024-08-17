@@ -12,11 +12,23 @@
 
 <section class="pt-10">
   <div class="space-y-4">
-    <a href="/" class="inline-flex items-center text-muted-foreground hover:text-primary">
-      <MoveLeftIcon class="mr-2 h-3 w-3" />
-      Back to templates
-    </a>
     {#if template}
+      <div class="flex items-center justify-between">
+        <a href="/" class="inline-flex items-center text-muted-foreground hover:text-primary">
+          <MoveLeftIcon class="mr-2 h-3 w-3" />
+          Back to templates
+        </a>
+        <Button
+          size="sm"
+          href={PUBLIC_UNDB_API_HOST +
+            "/create-from-template/" +
+            template.values.spaceId +
+            "/" +
+            template.values.baseId}
+        >
+          Use this template
+        </Button>
+      </div>
       {@const cover = template.values.Cover[0]}
       {#if cover}
         <AspectRatio class="w-full" ratio={16 / 3}>
