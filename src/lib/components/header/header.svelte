@@ -3,7 +3,7 @@
   import Logo from "$lib/images/logo.svg"
 </script>
 
-<div class="hidden border-b py-3 md:flex">
+<div class="flex border-b py-3 md:flex">
   <nav class="container flex items-center justify-between">
     <a href="/" class="mr-6 flex items-center space-x-2">
       <img src={Logo} alt="undb" class="h-6 w-6" />

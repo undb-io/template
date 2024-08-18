@@ -24,6 +24,8 @@
         </a>
         <Button
           size="sm"
+          class="tracking-tighter', 'transform-gpu group relative gap-2 overflow-hidden
+							 ring-offset-current transition-all duration-300 ease-out hover:ring-2 hover:ring-primary hover:ring-offset-2"
           href={PUBLIC_UNDB_API_HOST +
             "/create-from-template/" +
             template.values.spaceId +
@@ -47,6 +49,8 @@
       </p>
 
       <Button
+        class="tracking-tighter', 'transform-gpu group relative w-[400px] gap-2 overflow-hidden text-lg
+							font-semibold ring-offset-current transition-all duration-300 ease-out hover:ring-2 hover:ring-primary hover:ring-offset-2"
         href={PUBLIC_UNDB_API_HOST + "/create-from-template/" + template.values.spaceId + "/" + template.values.baseId}
       >
         Use this template
