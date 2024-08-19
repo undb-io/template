@@ -5,6 +5,7 @@ import type { PageServerLoad } from "./$types"
 export const load: PageServerLoad = async ({ fetch }) => {
   const templates = await templateClient.GET("/bases/templates/tables/templates/records", {
     fetch,
+    cache: "no-cache",
   })
 
   if (!templates.response.ok) {
