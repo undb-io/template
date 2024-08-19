@@ -13,6 +13,10 @@ const response = await fetch(
   },
 )
 
+if (!response.ok) {
+  throw new Error("Failed to fetch OpenAPI schema")
+}
+
 const data = await response.json()
 const ast = await openapiTS(data)
 const content = astToString(ast)

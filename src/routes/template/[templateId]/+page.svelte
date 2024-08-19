@@ -31,7 +31,7 @@
           Use this template
         </Button>
       </div>
-      {@const cover = template.values.Cover[0]}
+      {@const cover = template.values.Cover?.[0]}
       {#if cover}
         <AspectRatio class="w-full" ratio={16 / 3}>
           <img class="h-full w-full object-cover" src={cover.signedUrl} alt={template.values.Title} />
