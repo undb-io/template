@@ -1,5 +1,5 @@
 import { UNDB_API_KEY } from "$env/static/private"
-import { PUBLIC_UNDB_API_HOST } from "$env/static/public"
+import { PUBLIC_UNDB_HOST } from "$env/static/public"
 import createClient from "openapi-fetch"
 import type { components, paths } from "./templates"
 
@@ -8,7 +8,7 @@ headers.set("X-Undb-Api-Token", UNDB_API_KEY)
 headers.set("User-Agent", "undb-sveltekit-template")
 
 export const templateClient = createClient<paths>({
-  baseUrl: PUBLIC_UNDB_API_HOST + "/api",
+  baseUrl: PUBLIC_UNDB_HOST + "/api",
   headers,
 })
 
