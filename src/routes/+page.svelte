@@ -9,9 +9,11 @@
 <svelte:head>
   <title>Templates | Undb</title>
 </svelte:head>
-<main class="container mx-auto pt-8 md:pt-20">
+<main class="container mx-auto space-y-4 pt-8 md:pt-20">
   <h1 class="text-center text-3xl font-bold leading-tight md:block md:text-6xl lg:leading-[1.1]">
     Undb starter templates
   </h1>
+
+  <p class="text-center text-lg text-muted-foreground">🚧 Work in progress</p>
   <Templates {templates} />
 </main>
