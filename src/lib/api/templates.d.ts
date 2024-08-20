@@ -27,7 +27,7 @@ export interface paths {
                     content: {
                         "application/json": {
                             total: number;
-                            records: components["schemas"]["Record"][];
+                            records: (components["schemas"]["Record"] & unknown)[];
                         };
                     };
                 };
@@ -591,11 +591,120 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/bases/templates/tables/templates/views/default/records": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Get templates records in default view
+         * @description Get templates records in default view
+         */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description record data */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": {
+                            total: number;
+                            records: (components["schemas"]["ViewRecord"] & unknown)[];
+                        };
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/bases/templates/tables/templates/views/default/records/{recordId}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Get templates record by id in default view
+         * @description Get templates record by id in default view
+         */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    recordId: string;
+                };
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description record data */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": {
+                            data: components["schemas"]["ViewRecord"] & unknown;
+                        };
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
 }
 export type webhooks = Record<string, never>;
 export interface components {
     schemas: {
+        /** @example recfln6dgxy */
         RecordId: string;
+        /** @example {
+         *       "Title": "Project Management",
+         *       "createdAt": "2024-08-19T00:17:01.000Z",
+         *       "createdBy": "hjxvhdpy6lwott37",
+         *       "updatedAt": "2024-08-19T00:50:33.000Z",
+         *       "updatedBy": "hjxvhdpy6lwott37",
+         *       "autoIncrement": 1,
+         *       "Cover": [
+         *         {
+         *           "id": "019169d4-b3c3-7667-8f08-daa6b4956501",
+         *           "url": "/api/upload",
+         *           "signedUrl": "http://localhost:3721/public/019169d4-b3c3-7667-8f08-daa6b4956501.svg",
+         *           "name": "019169d4-b3c3-7667-8f08-daa6b4956501.svg",
+         *           "token": "23_CM_RXlEjtysBy",
+         *           "size": 5829,
+         *           "type": "image/svg+xml"
+         *         }
+         *       ],
+         *       "Summary": "project management",
+         *       "baseId": "basy8ddtq79",
+         *       "spaceId": "spacgz72",
+         *       "Images": []
+         *     } */
         RecordValues: {
             id: string;
             Title?: string | null;
@@ -626,14 +735,35 @@ export interface components {
                 type: string;
             }[] | null;
         };
+        /** @example {
+         *       "createdBy": {
+         *         "username": "nichenqin",
+         *         "email": "nichenqin@gmail.com"
+         *       },
+         *       "updatedBy": {
+         *         "username": "nichenqin",
+         *         "email": "nichenqin@gmail.com"
+         *       }
+         *     } */
         RecordDisplayValues: {
             createdBy?: unknown;
             updatedBy?: unknown;
         };
+        /** @description templates record schema */
         Record: {
             id: components["schemas"]["RecordId"];
             values: components["schemas"]["RecordValues"];
             displayValues: components["schemas"]["RecordDisplayValues"];
+        };
+        /** @description templates view record schema */
+        ViewRecord: {
+            id: components["schemas"]["RecordId"];
+            values: components["schemas"]["RecordValues"] & {
+                Title?: string | null;
+                Summary?: string | null;
+                baseId: string;
+            };
+            displayValues: components["schemas"]["RecordDisplayValues"] & unknown;
         };
         /** @description records count that has been updated */
         BulkUpdateRecordsOutput: {
