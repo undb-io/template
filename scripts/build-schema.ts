@@ -6,10 +6,6 @@ const url = new URL(
   env.PUBLIC_UNDB_HOST,
 )
 
-if (env.UNDB_TEMPLATE_VIEW_NAME) {
-  url.searchParams.set("view", env.UNDB_TEMPLATE_VIEW_NAME)
-}
-
 const response = await fetch(url, {
   headers: {
     "X-Undb-Api-Token": env.UNDB_API_KEY!,

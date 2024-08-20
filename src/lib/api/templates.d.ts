@@ -619,7 +619,7 @@ export interface paths {
                     content: {
                         "application/json": {
                             total: number;
-                            records: (components["schemas"]["ViewRecord"] & unknown)[];
+                            records: (components["schemas"]["default:ViewRecord"] & unknown)[];
                         };
                     };
                 };
@@ -662,7 +662,92 @@ export interface paths {
                     };
                     content: {
                         "application/json": {
-                            data: components["schemas"]["ViewRecord"] & unknown;
+                            data: components["schemas"]["default:ViewRecord"] & unknown;
+                        };
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/bases/templates/tables/templates/views/grid/records": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Get templates records in grid view
+         * @description Get templates records in grid view
+         */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description record data */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": {
+                            total: number;
+                            records: (components["schemas"]["grid:ViewRecord"] & unknown)[];
+                        };
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/bases/templates/tables/templates/views/grid/records/{recordId}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Get templates record by id in grid view
+         * @description Get templates record by id in grid view
+         */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    recordId: string;
+                };
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description record data */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": {
+                            data: components["schemas"]["grid:ViewRecord"] & unknown;
                         };
                     };
                 };
@@ -755,15 +840,73 @@ export interface components {
             values: components["schemas"]["RecordValues"];
             displayValues: components["schemas"]["RecordDisplayValues"];
         };
-        /** @description templates view record schema */
-        ViewRecord: {
+        /** @example {
+         *       "Title": "Project Management",
+         *       "Summary": "project management",
+         *       "baseId": "basy8ddtq79"
+         *     } */
+        "default:ViewRecordValues": {
+            Title?: string | null;
+            Summary?: string | null;
+            baseId: string;
+        };
+        /** @example {} */
+        "default:ViewRecordDisplayValues": Record<string, never>;
+        /** @description templates default view record schema */
+        "default:ViewRecord": {
             id: components["schemas"]["RecordId"];
-            values: components["schemas"]["RecordValues"] & {
-                Title?: string | null;
-                Summary?: string | null;
-                baseId: string;
-            };
-            displayValues: components["schemas"]["RecordDisplayValues"] & unknown;
+            values: components["schemas"]["default:ViewRecordValues"];
+            displayValues: components["schemas"]["default:ViewRecordDisplayValues"];
+        };
+        /** @example {
+         *       "Title": "Project Management",
+         *       "Cover": [
+         *         {
+         *           "id": "019169d4-b3c3-7667-8f08-daa6b4956501",
+         *           "url": "/api/upload",
+         *           "signedUrl": "http://localhost:3721/public/019169d4-b3c3-7667-8f08-daa6b4956501.svg",
+         *           "name": "019169d4-b3c3-7667-8f08-daa6b4956501.svg",
+         *           "token": "23_CM_RXlEjtysBy",
+         *           "size": 5829,
+         *           "type": "image/svg+xml"
+         *         }
+         *       ],
+         *       "Summary": "project management",
+         *       "baseId": "basy8ddtq79",
+         *       "spaceId": "spacgz72",
+         *       "Images": []
+         *     } */
+        "grid:ViewRecordValues": {
+            Title?: string | null;
+            Cover?: {
+                id: string;
+                url: string;
+                signedUrl?: string | null;
+                name: string;
+                token: string;
+                size: number;
+                type: string;
+            }[] | null;
+            Summary?: string | null;
+            baseId: string;
+            spaceId: string;
+            Images?: {
+                id: string;
+                url: string;
+                signedUrl?: string | null;
+                name: string;
+                token: string;
+                size: number;
+                type: string;
+            }[] | null;
+        };
+        /** @example {} */
+        "grid:ViewRecordDisplayValues": Record<string, never>;
+        /** @description templates grid view record schema */
+        "grid:ViewRecord": {
+            id: components["schemas"]["RecordId"];
+            values: components["schemas"]["grid:ViewRecordValues"];
+            displayValues: components["schemas"]["grid:ViewRecordDisplayValues"];
         };
         /** @description records count that has been updated */
         BulkUpdateRecordsOutput: {
