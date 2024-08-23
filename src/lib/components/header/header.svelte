@@ -1,6 +1,7 @@
 <script lang="ts">
   import { cn } from "$lib/utils.js"
   import Logo from "$lib/images/logo.svg"
+  import Button from "../ui/button/button.svelte"
 </script>
 
 <div class="flex border-b py-3 md:flex">
@@ -9,23 +10,13 @@
       <img src={Logo} alt="undb" class="h-6 w-6" />
       <span class="hidden font-bold sm:inline-block"> undb </span>
     </a>
-    <nav class="flex items-center gap-6 text-sm">
-      <a
-        href="https://docs.undb.io"
-        target="_blank"
-        rel="noopener noreferrer"
-        class={cn("transition-colors hover:text-foreground/80", "text-foreground/60")}
-      >
-        Docs
-      </a>
-      <a
-        href="https://app.undb.io"
-        target="_blank"
-        rel="noopener noreferrer"
-        class={cn("transition-colors hover:text-foreground/80", "text-foreground/60")}
-      >
-        App
-      </a>
+    <nav class="flex items-center gap-4 text-sm">
+      <Button href="https://docs.undb.io" size="sm" variant="ghost" target="_blank" rel="noopener noreferrer">
+        Documentation
+      </Button>
+      <Button href="https://app.undb.io" size="sm" variant="ghost" target="_blank" rel="noopener noreferrer">
+        Go to App
+      </Button>
 
       <a
         href="https://github.com/undb-io/undb"
