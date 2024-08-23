@@ -72,8 +72,6 @@ export interface paths {
                                 }[] | null;
                             } | unknown;
                             Summary?: string | null;
-                            baseId: string;
-                            spaceId: string;
                             Images?: ({
                                 id: string;
                                 url: string;
@@ -95,6 +93,9 @@ export interface paths {
                                     type: string;
                                 }[] | null;
                             } | unknown;
+                            shareId: string;
+                            Lauched?: boolean;
+                            Creator: string;
                         };
                     };
                 };
@@ -182,8 +183,6 @@ export interface paths {
                                 }[] | null;
                             } | unknown;
                             Summary?: string | null;
-                            baseId?: string;
-                            spaceId?: string;
                             Images?: ({
                                 id: string;
                                 url: string;
@@ -205,6 +204,9 @@ export interface paths {
                                     type: string;
                                 }[] | null;
                             } | unknown;
+                            shareId?: string;
+                            Lauched?: boolean;
+                            Creator?: string;
                         };
                     };
                 };
@@ -326,8 +328,6 @@ export interface paths {
                                 }[] | null;
                             } | unknown;
                             Summary?: string | null;
-                            baseId?: string;
-                            spaceId?: string;
                             Images?: ({
                                 id: string;
                                 url: string;
@@ -349,6 +349,9 @@ export interface paths {
                                     type: string;
                                 }[] | null;
                             } | unknown;
+                            shareId?: string;
+                            Lauched?: boolean;
+                            Creator?: string;
                         };
                     };
                 };
@@ -414,8 +417,6 @@ export interface paths {
                                     }[] | null;
                                 } | unknown;
                                 Summary?: string | null;
-                                baseId: string;
-                                spaceId: string;
                                 Images?: ({
                                     id: string;
                                     url: string;
@@ -437,6 +438,9 @@ export interface paths {
                                         type: string;
                                     }[] | null;
                                 } | unknown;
+                                shareId: string;
+                                Lauched?: boolean;
+                                Creator: string;
                             };
                         }[];
                     };
@@ -771,7 +775,7 @@ export interface components {
          *       "Title": "Project Management",
          *       "createdAt": "2024-08-19T00:17:01.000Z",
          *       "createdBy": "hjxvhdpy6lwott37",
-         *       "updatedAt": "2024-08-19T00:50:33.000Z",
+         *       "updatedAt": "2024-08-22T19:41:55.000Z",
          *       "updatedBy": "hjxvhdpy6lwott37",
          *       "autoIncrement": 1,
          *       "Cover": [
@@ -786,9 +790,10 @@ export interface components {
          *         }
          *       ],
          *       "Summary": "project management",
-         *       "baseId": "basy8ddtq79",
-         *       "spaceId": "spacgz72",
-         *       "Images": []
+         *       "Images": [],
+         *       "shareId": "shrzrd0ugf2svwi",
+         *       "Lauched": true,
+         *       "Creator": "Undb"
          *     } */
         RecordValues: {
             id: string;
@@ -808,8 +813,6 @@ export interface components {
                 type: string;
             }[] | null;
             Summary?: string | null;
-            baseId: string;
-            spaceId: string;
             Images?: {
                 id: string;
                 url: string;
@@ -819,6 +822,9 @@ export interface components {
                 size: number;
                 type: string;
             }[] | null;
+            shareId: string;
+            Lauched?: boolean;
+            Creator: string;
         };
         /** @example {
          *       "createdBy": {
@@ -843,12 +849,16 @@ export interface components {
         /** @example {
          *       "Title": "Project Management",
          *       "Summary": "project management",
-         *       "baseId": "basy8ddtq79"
+         *       "shareId": "shrzrd0ugf2svwi",
+         *       "Lauched": true,
+         *       "Creator": "Undb"
          *     } */
         "default:ViewRecordValues": {
             Title?: string | null;
             Summary?: string | null;
-            baseId: string;
+            shareId: string;
+            Lauched?: boolean;
+            Creator: string;
         };
         /** @example {} */
         "default:ViewRecordDisplayValues": Record<string, never>;
@@ -872,9 +882,8 @@ export interface components {
          *         }
          *       ],
          *       "Summary": "project management",
-         *       "baseId": "basy8ddtq79",
-         *       "spaceId": "spacgz72",
-         *       "Images": []
+         *       "shareId": "shrzrd0ugf2svwi",
+         *       "Creator": "Undb"
          *     } */
         "grid:ViewRecordValues": {
             Title?: string | null;
@@ -888,17 +897,8 @@ export interface components {
                 type: string;
             }[] | null;
             Summary?: string | null;
-            baseId: string;
-            spaceId: string;
-            Images?: {
-                id: string;
-                url: string;
-                signedUrl?: string | null;
-                name: string;
-                token: string;
-                size: number;
-                type: string;
-            }[] | null;
+            shareId: string;
+            Creator: string;
         };
         /** @example {} */
         "grid:ViewRecordDisplayValues": Record<string, never>;

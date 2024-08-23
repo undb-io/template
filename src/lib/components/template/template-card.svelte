@@ -17,7 +17,7 @@
         {/if}
       </AspectRatio>
 
-      <div class="flex-1 px-4 pb-4 pt-3">
+      <div class="flex flex-1 flex-col justify-between px-4 pb-4 pt-3">
         <p class="flex items-center font-semibold">
           <span>
             {template.values.Title}
@@ -28,6 +28,11 @@
 
         <p class="line-clamp-6 text-sm text-muted-foreground">
           {template.values.Summary}
+        </p>
+
+        <p class="mt-4 text-right text-xs text-muted-foreground">
+          <span> Created by: </span>
+          <span class="font-semibold"> {template.values.Creator} </span>
         </p>
       </div>
     </Card.Content>

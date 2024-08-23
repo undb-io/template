@@ -12,4 +12,4 @@ export const templateClient = createClient<paths>({
   headers,
 })
 
-export type Template = components["schemas"]["Record"]
+export type Template = components["schemas"]["grid:ViewRecord"]

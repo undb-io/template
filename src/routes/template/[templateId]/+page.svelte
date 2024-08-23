@@ -14,7 +14,7 @@
   <title>{template?.values.Title} | Undb Templates</title>
 </svelte:head>
 
-<section class="pt-10">
+<section class="space-y-6 py-10">
   <div class="space-y-4">
     {#if template}
       <div class="flex items-center justify-between">
@@ -26,7 +26,7 @@
           size="sm"
           class="tracking-tighter', 'transform-gpu group relative gap-2 overflow-hidden
 							 ring-offset-current transition-all duration-300 ease-out hover:ring-2 hover:ring-primary hover:ring-offset-2"
-          href={PUBLIC_UNDB_HOST + "/create-from-template/" + template.values.spaceId + "/" + template.values.baseId}
+          href={PUBLIC_UNDB_HOST + "/create-from-template/" + template.values.shareId}
         >
           Use this template
         </Button>
@@ -47,10 +47,22 @@
       <Button
         class="tracking-tighter', 'transform-gpu group relative w-[400px] gap-2 overflow-hidden text-lg
 							font-semibold ring-offset-current transition-all duration-300 ease-out hover:ring-2 hover:ring-primary hover:ring-offset-2"
-        href={PUBLIC_UNDB_HOST + "/create-from-template/" + template.values.spaceId + "/" + template.values.baseId}
+        href={PUBLIC_UNDB_HOST + "/create-from-template/" + template.values.shareId}
       >
         Use this template
       </Button>
     {/if}
   </div>
+
+  {#if template}
+    <div class="space-y-4">
+      <h1 class="text-lg font-semibold">Template Preview</h1>
+      <iframe
+        class="h-[700px] w-full rounded-md border"
+        src={PUBLIC_UNDB_HOST + "/s/b/" + template.values.shareId}
+        frameborder="1"
+        title={template.values.Title}
+      ></iframe>
+    </div>
+  {/if}
 </section>

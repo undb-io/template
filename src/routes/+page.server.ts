@@ -3,7 +3,7 @@ import { error } from "@sveltejs/kit"
 import type { PageServerLoad } from "./$types"
 
 export const load: PageServerLoad = async ({ fetch }) => {
-  const templates = await templateClient.GET("/bases/templates/tables/templates/views/default/records", {
+  const templates = await templateClient.GET("/bases/templates/tables/templates/views/grid/records", {
     fetch,
     cache: "no-cache",
   })
