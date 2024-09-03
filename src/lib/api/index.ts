@@ -8,7 +8,7 @@ headers.set("X-Undb-Api-Token", UNDB_API_KEY)
 headers.set("User-Agent", "undb-sveltekit-template")
 
 export const undb = new Client({
-  baseUrl: PUBLIC_UNDB_HOST + "/api",
+  baseUrl: PUBLIC_UNDB_HOST + "/openapi",
 })
 
 undb.setSecret(UNDB_API_KEY)

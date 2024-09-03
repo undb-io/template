@@ -2,7 +2,7 @@ import { env } from "bun"
 import openapiTS, { astToString } from "openapi-typescript"
 
 const url = new URL(
-  `/api/bases/${env.UNDB_TEMPLATE_BASE_NAME}/tables/${env.UNDB_TEMPLATE_TABLE_NAME}/openapi.json`,
+  `/openapi/bases/${env.UNDB_TEMPLATE_BASE_NAME}/tables/${env.UNDB_TEMPLATE_TABLE_NAME}/openapi.json`,
   env.PUBLIC_UNDB_HOST,
 )
 
