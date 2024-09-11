@@ -775,7 +775,7 @@ export interface components {
          *       "Title": "Project Management",
          *       "createdAt": "2024-08-19T00:17:01.000Z",
          *       "createdBy": "hjxvhdpy6lwott37",
-         *       "updatedAt": "2024-08-22T19:41:55.000Z",
+         *       "updatedAt": "2024-09-10T23:04:37.000Z",
          *       "updatedBy": "hjxvhdpy6lwott37",
          *       "autoIncrement": 1,
          *       "Cover": [
@@ -790,7 +790,26 @@ export interface components {
          *         }
          *       ],
          *       "Summary": "project management",
-         *       "Images": [],
+         *       "Images": [
+         *         {
+         *           "id": "0191dfe5-e949-700b-9548-f9f84c39e280",
+         *           "url": "/api/upload",
+         *           "signedUrl": "http://localhost:3721/public/0191dfe5-e949-700b-9548-f9f84c39e280.jpeg",
+         *           "name": "0191dfe5-e949-700b-9548-f9f84c39e280.jpeg",
+         *           "token": "zjkbsC1s3cE3Bbod",
+         *           "size": 651375,
+         *           "type": "image/jpeg"
+         *         },
+         *         {
+         *           "id": "0191dfe5-fdb4-700b-9549-010f57d74865",
+         *           "url": "/api/upload",
+         *           "signedUrl": "http://localhost:3721/public/0191dfe5-fdb4-700b-9549-010f57d74865.jpeg",
+         *           "name": "0191dfe5-fdb4-700b-9549-010f57d74865.jpeg",
+         *           "token": "oLeknG_soXiNuLuE",
+         *           "size": 723716,
+         *           "type": "image/jpeg"
+         *         }
+         *       ],
          *       "shareId": "shrzrd0ugf2svwi",
          *       "Lauched": true,
          *       "Creator": "Undb"
@@ -849,6 +868,26 @@ export interface components {
         /** @example {
          *       "Title": "Project Management",
          *       "Summary": "project management",
+         *       "Images": [
+         *         {
+         *           "id": "0191dfe5-e949-700b-9548-f9f84c39e280",
+         *           "url": "/api/upload",
+         *           "signedUrl": "http://localhost:3721/public/0191dfe5-e949-700b-9548-f9f84c39e280.jpeg",
+         *           "name": "0191dfe5-e949-700b-9548-f9f84c39e280.jpeg",
+         *           "token": "zjkbsC1s3cE3Bbod",
+         *           "size": 651375,
+         *           "type": "image/jpeg"
+         *         },
+         *         {
+         *           "id": "0191dfe5-fdb4-700b-9549-010f57d74865",
+         *           "url": "/api/upload",
+         *           "signedUrl": "http://localhost:3721/public/0191dfe5-fdb4-700b-9549-010f57d74865.jpeg",
+         *           "name": "0191dfe5-fdb4-700b-9549-010f57d74865.jpeg",
+         *           "token": "oLeknG_soXiNuLuE",
+         *           "size": 723716,
+         *           "type": "image/jpeg"
+         *         }
+         *       ],
          *       "shareId": "shrzrd0ugf2svwi",
          *       "Lauched": true,
          *       "Creator": "Undb"
@@ -856,6 +895,15 @@ export interface components {
         "default:ViewRecordValues": {
             Title?: string | null;
             Summary?: string | null;
+            Images?: {
+                id: string;
+                url: string;
+                signedUrl?: string | null;
+                name: string;
+                token: string;
+                size: number;
+                type: string;
+            }[] | null;
             shareId: string;
             Lauched?: boolean;
             Creator: string;
@@ -882,6 +930,26 @@ export interface components {
          *         }
          *       ],
          *       "Summary": "project management",
+         *       "Images": [
+         *         {
+         *           "id": "0191dfe5-e949-700b-9548-f9f84c39e280",
+         *           "url": "/api/upload",
+         *           "signedUrl": "http://localhost:3721/public/0191dfe5-e949-700b-9548-f9f84c39e280.jpeg",
+         *           "name": "0191dfe5-e949-700b-9548-f9f84c39e280.jpeg",
+         *           "token": "zjkbsC1s3cE3Bbod",
+         *           "size": 651375,
+         *           "type": "image/jpeg"
+         *         },
+         *         {
+         *           "id": "0191dfe5-fdb4-700b-9549-010f57d74865",
+         *           "url": "/api/upload",
+         *           "signedUrl": "http://localhost:3721/public/0191dfe5-fdb4-700b-9549-010f57d74865.jpeg",
+         *           "name": "0191dfe5-fdb4-700b-9549-010f57d74865.jpeg",
+         *           "token": "oLeknG_soXiNuLuE",
+         *           "size": 723716,
+         *           "type": "image/jpeg"
+         *         }
+         *       ],
          *       "shareId": "shrzrd0ugf2svwi",
          *       "Creator": "Undb"
          *     } */
@@ -897,6 +965,15 @@ export interface components {
                 type: string;
             }[] | null;
             Summary?: string | null;
+            Images?: {
+                id: string;
+                url: string;
+                signedUrl?: string | null;
+                name: string;
+                token: string;
+                size: number;
+                type: string;
+            }[] | null;
             shareId: string;
             Creator: string;
         };

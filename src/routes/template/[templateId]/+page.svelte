@@ -4,6 +4,7 @@
   import { Button } from "$lib/components/ui/button"
   import { PUBLIC_UNDB_HOST } from "$env/static/public"
   import { AspectRatio } from "$lib/components/ui/aspect-ratio"
+  import * as Dialog from "$lib/components/ui/dialog"
 
   export let data: PageServerData
 
@@ -40,9 +41,30 @@
 
       <h1 class="text-2xl font-semibold">{template.values.Title}</h1>
 
-      <p class="text-muted-foreground">
-        {template.values.Summary}
-      </p>
+      {#if template.values.Images?.length}
+        <div class="space-y-2">
+          <h3 class="text-lg font-semibold">Images</h3>
+          <div class="flex items-center gap-2">
+            {#each template.values.Images ?? [] as image}
+              <Dialog.Root>
+                <Dialog.Trigger class="w-40">
+                  <img src={image.signedUrl} alt={template.values.Title} />
+                </Dialog.Trigger>
+                <Dialog.Content class="p-2 md:max-w-7xl">
+                  <img src={image.signedUrl} alt={template.values.Title} />
+                </Dialog.Content>
+              </Dialog.Root>
+            {/each}
+          </div>
+        </div>
+      {/if}
+
+      <div class="space-y-2">
+        <h3 class="text-lg font-semibold">Summary</h3>
+        <p class="text-muted-foreground">
+          {template.values.Summary}
+        </p>
+      </div>
 
       <Button
         class="tracking-tighter', 'transform-gpu group relative w-[400px] gap-2 overflow-hidden text-lg
