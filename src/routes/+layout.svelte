@@ -20,7 +20,7 @@
 </div>
 
 <svelte:head>
-  {#if dev}
+  {#if !dev}
     <script defer src="/script.js" data-website-id="4187c9f3-1c0c-4343-854c-beb9320361b0"></script>
   {/if}
 </svelte:head>
