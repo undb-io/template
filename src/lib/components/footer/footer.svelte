@@ -3,7 +3,7 @@
     <span class="text-sm text-gray-500 dark:text-gray-400 sm:text-center"
       >© 2024 <a href="https://undb.io" class="hover:underline">undb™</a>.
     </span>
-    <ul class="mt-3 flex flex-wrap items-center gap-2 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+    <ul class="mt-3 flex flex-wrap items-center gap-4 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
       <li>
         <a href="https://discord.gg/3rcNdU3y3U" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
           <svg
@@ -18,6 +18,15 @@
             />
           </svg>
           <span class="sr-only">Discord community</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://x.com/undb_io" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+          <svg class="h-4 w-4" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+            ><title>X</title><path
+              d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"
+            /></svg
+          >
         </a>
       </li>
       <li>
