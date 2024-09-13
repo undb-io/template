@@ -4,6 +4,7 @@
   import { onNavigate } from "$app/navigation"
   import { Ssgoi } from "ssgoi"
   import { config } from "$lib/ssgoi/config"
+  import { dev } from "$app/environment"
 
   import "../app.css"
 </script>
@@ -17,6 +18,12 @@
   </main>
   <Footer />
 </div>
+
+<svelte:head>
+  {#if dev}
+    <script defer src="/script.js" data-website-id="4187c9f3-1c0c-4343-854c-beb9320361b0"></script>
+  {/if}
+</svelte:head>
 
 <style>
   .app {
