@@ -27,7 +27,7 @@
           size="sm"
           class="tracking-tighter', 'transform-gpu group relative gap-2 overflow-hidden
 							 ring-offset-current transition-all duration-300 ease-out hover:ring-2 hover:ring-primary hover:ring-offset-2"
-          href={PUBLIC_UNDB_HOST + "/create-from-template/" + template.values.shareId}
+          href={PUBLIC_UNDB_HOST + "/create-from-share/" + template.values.shareId}
         >
           Use this template
         </Button>
@@ -69,7 +69,7 @@
       <Button
         class="tracking-tighter', 'transform-gpu group relative w-[400px] gap-2 overflow-hidden text-lg
 							font-semibold ring-offset-current transition-all duration-300 ease-out hover:ring-2 hover:ring-primary hover:ring-offset-2"
-        href={PUBLIC_UNDB_HOST + "/create-from-template/" + template.values.shareId}
+        href={PUBLIC_UNDB_HOST + "/create-from-share/" + template.values.shareId}
       >
         Use this template
       </Button>
